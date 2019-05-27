@@ -1,7 +1,12 @@
 package com.stackroute.config;
 
+import com.stackroute.awareInterface.ApplicationContextAwareDemo;
+import com.stackroute.awareInterface.BeanFactoryAwareDemo;
+import com.stackroute.awareInterface.BeanNameAwareDemo;
+import com.stackroute.awareInterface.ResourceLoaderAwareDemo;
 import com.stackroute.domain.Actor;
 import com.stackroute.domain.Movie;
+import org.springframework.beans.factory.BeanNameAware;
 import org.springframework.beans.factory.annotation.Autowire;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.Bean;
@@ -14,7 +19,8 @@ public class SpringBeanConfiguration {
     private Actor actor;
 
     private Movie movie;
-    /*@Bean(name="Actor1")
+/*
+    @Bean(name="Actor1")
     public Actor getActor1(){
         actor=new Actor();
         actor.setAge(25);
@@ -28,8 +34,9 @@ public class SpringBeanConfiguration {
     public Movie getMovie1(){
         return new Movie(1,"Raazi",getActor1());
     }
+*/
 
-    @Bean(name="Actor2")
+    /*@Bean(name="Actor2")
     public Actor getActor2(){
         actor=new Actor();
         actor.setAge(30);
@@ -43,7 +50,6 @@ public class SpringBeanConfiguration {
     public Movie getMovie2(){
         return new Movie(2,"Judwa 2",getActor2());
     }*/
-
 
     @Bean(name = "actor")
     public Actor getActor(){
@@ -67,4 +73,25 @@ public class SpringBeanConfiguration {
     public Movie getMovie(){
         return new  Movie(1,"Baby");
     }
+
+    @Bean(name = "ApplicationContextAware")
+    public ApplicationContextAwareDemo getApplicationContextAwareDemo(){
+        return new ApplicationContextAwareDemo();
+    }
+
+    @Bean(name = "BeanFactoryAware")
+    public BeanFactoryAwareDemo getBeanFactoryAwareDemo(){
+        return new BeanFactoryAwareDemo();
+    }
+
+    @Bean(name = "BeanNameAware")
+    public BeanNameAwareDemo getBeanNameAwareDemo(){
+        return new BeanNameAwareDemo();
+    }
+
+    @Bean(name = "ResourceLoaderAwareDemo")
+    public ResourceLoaderAwareDemo getResourceLoaderAwareDemo(){
+        return new ResourceLoaderAwareDemo();
+    }
+
 }

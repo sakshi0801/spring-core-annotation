@@ -12,11 +12,11 @@ public class App
         AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext();
         ctx.register(AppConfig.class);
         ctx.refresh();
-
-        /*Movie movie1=(Movie) ctx.getBean("Movie1");
-        System.out.println(movie1.getActor().getName()+" acted in "+movie1.getMovieName());
-
-        Movie movie2=(Movie) ctx.getBean("Movie2");
+/*
+        Movie movie1=(Movie) ctx.getBean("Movie1");
+        System.out.println(movie1.getActor1().getName()+" acted in "+movie1.getMovieName());
+*/
+        /*Movie movie2=(Movie) ctx.getBean("Movie2");
         System.out.println(movie2.getActor().getName()+" acted in "+movie2.getMovieName());
 
         Movie movie3=(Movie) ctx.getBean("Movie1");
@@ -32,7 +32,7 @@ public class App
         //using autowire
 
         Movie movie1=(Movie) ctx.getBean("Movie");
-        System.out.println("AutoWire by name");
+        //System.out.println("AutoWire by name");
         System.out.println(movie1.getActor1().getName()+" acted in "+movie1.getMovieName());
     }
 }
