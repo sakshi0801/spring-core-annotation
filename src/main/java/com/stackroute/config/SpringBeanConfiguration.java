@@ -5,9 +5,9 @@ import com.stackroute.awareInterface.BeanFactoryAwareDemo;
 import com.stackroute.awareInterface.BeanNameAwareDemo;
 import com.stackroute.awareInterface.ResourceLoaderAwareDemo;
 import com.stackroute.demo.BeanLifeCycleDemo;
+import com.stackroute.demo.BeanPostProcessorDemo;
 import com.stackroute.domain.Actor;
 import com.stackroute.domain.Movie;
-import org.springframework.beans.factory.BeanNameAware;
 import org.springframework.beans.factory.annotation.Autowire;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.Bean;
@@ -75,17 +75,17 @@ public class SpringBeanConfiguration {
         return new  Movie(1,"Baby");
     }
 
-    @Bean(name = "ApplicationContextAware")
+    @Bean(name = "ApplicationContextAwareDemo")
     public ApplicationContextAwareDemo getApplicationContextAwareDemo(){
         return new ApplicationContextAwareDemo();
     }
 
-    @Bean(name = "BeanFactoryAware")
+    @Bean(name = "BeanFactoryAwareDemo")
     public BeanFactoryAwareDemo getBeanFactoryAwareDemo(){
         return new BeanFactoryAwareDemo();
     }
 
-    @Bean(name = "BeanNameAware")
+    @Bean(name = "BeanNameAwareDemo")
     public BeanNameAwareDemo getBeanNameAwareDemo(){
         return new BeanNameAwareDemo();
     }
@@ -100,4 +100,8 @@ public class SpringBeanConfiguration {
         return new BeanLifeCycleDemo();
     }
 
+    @Bean(name = "BeanPostProcessorDemo")
+    public BeanPostProcessorDemo getBeanPostProcessorDemo(){
+        return new BeanPostProcessorDemo();
+    }
 }
