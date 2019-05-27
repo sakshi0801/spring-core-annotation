@@ -13,7 +13,7 @@ public class App
         ctx.register(AppConfig.class);
         ctx.refresh();
 
-        Movie movie1=(Movie) ctx.getBean("Movie1");
+        /*Movie movie1=(Movie) ctx.getBean("Movie1");
         System.out.println(movie1.getActor().getName()+" acted in "+movie1.getMovieName());
 
         Movie movie2=(Movie) ctx.getBean("Movie2");
@@ -27,7 +27,12 @@ public class App
 
         Movie movie5=(Movie)ctx.getBean("Movie3");
         System.out.println("By using two different name");
-        System.out.println(movie5.getActor().getName()+" acted in "+movie5.getMovieName());
+        System.out.println(movie5.getActor().getName()+" acted in "+movie5.getMovieName());*/
 
+        //using autowire
+
+        Movie movie1=(Movie) ctx.getBean("Movie");
+        System.out.println("AutoWire by name");
+        System.out.println(movie1.getActor1().getName()+" acted in "+movie1.getMovieName());
     }
 }
