@@ -24,5 +24,10 @@ public class App
 
         Movie movie4=(Movie) ctx.getBean("Movie2");
         System.out.println("Equality of objects when scope is singleton :"+(movie2==movie4));
+
+        Movie movie5=(Movie)ctx.getBean("Movie3");
+        System.out.println("By using two different name");
+        System.out.println(movie5.getActor().getName()+" acted in "+movie5.getMovieName());
+
     }
 }

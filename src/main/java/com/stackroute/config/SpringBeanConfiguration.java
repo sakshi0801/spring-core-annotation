@@ -36,7 +36,7 @@ public class SpringBeanConfiguration {
         return actor;
     }
 
-    @Bean(name="Movie2")
+    @Bean(name={"Movie2","Movie3"})
     @Scope(value = ConfigurableBeanFactory.SCOPE_SINGLETON)
     public Movie getMovie2(){
         return new Movie(2,"Judwa 2",getActor2());
