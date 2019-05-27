@@ -34,5 +34,7 @@ public class App
         Movie movie1=(Movie) ctx.getBean("Movie");
         //System.out.println("AutoWire by name");
         System.out.println(movie1.getActor1().getName()+" acted in "+movie1.getMovieName());
+
+        ctx.close();
     }
 }
