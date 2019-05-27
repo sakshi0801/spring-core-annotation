@@ -15,11 +15,14 @@ public class App
 
         Movie movie1=(Movie) ctx.getBean("Movie1");
         System.out.println(movie1.getActor().getName()+" acted in "+movie1.getMovieName());
-        //System.out.println(movie1);
 
         Movie movie2=(Movie) ctx.getBean("Movie2");
         System.out.println(movie2.getActor().getName()+" acted in "+movie2.getMovieName());
-        //System.out.println(movie2);
 
+        Movie movie3=(Movie) ctx.getBean("Movie1");
+        System.out.println("Equality of objects when scope is prototype :"+(movie3==movie1));
+
+        Movie movie4=(Movie) ctx.getBean("Movie2");
+        System.out.println("Equality of objects when scope is singleton :"+(movie2==movie4));
     }
 }
